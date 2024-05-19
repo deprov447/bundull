@@ -1,0 +1,16 @@
+{
+  "name": "bundull",
+  "version": "0.0.1",
+  "description": "A bun based toy bundler (experiment)",
+  "main": "index.js",
+  "scripts": {
+    "build": "./bundull.js"
+  },
+  "keywords": [
+    "bundler",
+    "bun",
+    "toy"
+  ],
+  "author": "deprov447",
+  "license": "MIT"
+}
