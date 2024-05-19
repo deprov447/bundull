@@ -2,9 +2,12 @@
   "name": "bundull",
   "version": "0.0.1",
   "description": "A bun based toy bundler (experiment)",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/parser.mjs",
   "scripts": {
-    "build": "./bundull.js"
+    "bundull": "bun src/parser.mjs",
+    "dev": "bun --watch run src/parser.mjs",
+    "dev-pretty": "npm run dev | pino-pretty"
   },
   "keywords": [
     "bundler",
@@ -12,5 +15,13 @@
     "toy"
   ],
   "author": "deprov447",
-  "license": "MIT"
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "acorn": "^8.11.3",
+    "escodegen": "^2.1.0",
+    "pino": "^9.1.0"
+  }
 }
