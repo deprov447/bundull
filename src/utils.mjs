@@ -22,6 +22,17 @@ const genCodeFile = (root, file) => {
     LOG.info(`File written to ${file}`)
 }
 
+const hoistImports = (root) => {
+    root.body.sort((nodeA, nodeB) => {
+        if (nodeA.type == "ImportDeclaration" && nodeB.type != 'ImportDeclaration')
+            return -1
+        else if (nodeA.type != "ImportDeclaration" && nodeB.type == 'ImportDeclaration')
+            return 1
+        else if (nodeA.type == "ImportDeclaration" && nodeB.type == "ImportDeclaration")
+            return 0
+    })
+}
+
 const parseCode = (code, conf) => {
     const parserConf = {
         ecmaVersion: 2020,
@@ -47,6 +58,7 @@ const parseCodeFile = (file) => {
 export {
     genCode,
     genCodeFile,
+    hoistImports,
     parseCode,
     parseCodeFile,
     LOG
