@@ -28,7 +28,7 @@ const parseCode = (code, conf) => {
         ...conf
     }
     const root = acorn.parse(code, parserConf)
-    LOG.info(root)
+    // LOG.info(root)
     return root
 }
 
